@@ -4,5 +4,5 @@ Rails.application.routes.draw do
     resources :images
   end
   root to: "home#index"
-  get '/user/my-profile' => "users#profile"
+  get '/user/profile' => "users#profile"
 end

@@ -10,17 +10,17 @@
 
   <body>
     <div class=" container header-navbar">
-      <%= link_to "Home", root_path%>
+      <%= link_to "Home ||", root_path%>
       <%if user_signed_in? %>
-        <%= link_to "My Pictures", user_path(current_user) %>
-        <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
-        <%= link_to "Upload an Image", new_user_image_path(current_user) %>
+        <%= link_to "My Profile |", user_profile_path(current_user) %>
+        <%= link_to "My Pictures |", user_path(current_user) %>
+        <%= link_to "Upload an Image |", new_user_image_path(current_user) %>
+        <span class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></span>
       <%else%>
-        <%= link_to "Sign Up", new_user_registration_path %>
-        <%= link_to "Sign In", new_user_session_path%>
+        <%= link_to "Sign Up |", new_user_registration_path %>
+        <%= link_to "Sign In |", new_user_session_path%>
       <%end%>
     </div>
-
 
     <div class="container">
       <p class="notice"><%= notice %></p>
