@@ -1,0 +1,7 @@
+<h3>Edit the Image</h3>
+<%= form_for [current_user, @image], html: { multipart: true } do |form| %>
+  <%= form.label :title %>
+  <%= form.text_field :title %>
+  <%= form.file_field :image %>
+  <%= form.submit "Upload" %>
+<% end %>

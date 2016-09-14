@@ -1,6 +1,10 @@
 class ImagesController < ApplicationController
+  before_filter :is_image_owner, only:[:edit]
   def new
     @image = current_user.images.new
+  end
+  def show
+    @image = Image.find(params[:id])
   end
 
   def create
@@ -10,7 +14,20 @@ class ImagesController < ApplicationController
     else
       render :new
     end
+  end
 
+  def edit
+    @image = Image.find(params[:id])
+    @user = User.find(params[:user_id])
+  end
+
+  def update
+    @image = current_user.images.find(params[:id])
+    if @image.update(image_params)
+      redirect_to user_image_path(current_user, @image)
+    else
+      render :edit
+    end
   end
 
 private
