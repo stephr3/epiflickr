@@ -1,5 +1,5 @@
 <h3>Add a New Image</h3>
-<%= form_for [current_user, @image], url: images_path, html: { multipart: true } do |form| %>
+<%= form_for [current_user, @image], url: user_images_path, html: { multipart: true } do |form| %>
   <%= form.label :title %>
   <%= form.text_field :title %>
   <%= form.file_field :image %>

@@ -12,7 +12,7 @@
     <div class=" container header-navbar">
       <%= link_to "Home", root_path%>
       <%if user_signed_in? %>
-        <%= link_to "My Profile", user_path(current_user) %>
+        <%= link_to "My Pictures", user_path(current_user) %>
         <%= link_to "Sign Out", destroy_user_session_path, method: :delete %>
         <%= link_to "Upload an Image", new_user_image_path(current_user) %>
       <%else%>

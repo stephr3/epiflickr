@@ -1,5 +1,5 @@
 class ImagesController < ApplicationController
-  before_filter :is_image_owner, only:[:edit]
+  before_filter :is_image_owner, only:[:edit, :destroy]
   def new
     @image = current_user.images.new
   end
@@ -28,6 +28,12 @@ class ImagesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @image = current_user.images.find(params[:id])
+    @image.destroy
+    redirect_to root_path
   end
 
 private
