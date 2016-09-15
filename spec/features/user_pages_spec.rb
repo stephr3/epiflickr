@@ -3,6 +3,7 @@ describe "signing up a new user" do
   it "signs up a new user" do
     visit root_path
     click_link 'Sign up'
+    fill_in "Username", :with => 'blender'
     fill_in "Email", :with => 'me@me.com'
     fill_in "Password", :with => "123456"
     fill_in "Password confirmation", :with => "123456"

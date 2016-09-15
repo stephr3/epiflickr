@@ -1,10 +1,13 @@
-
-<h3>User Uploaded Images<h3>
-<div class="image-list">
-  <% current_user.images.each do |image| %>
-  <div class="image-div">
-    <%= image_tag image.image.url(:medium) %>
-    <%= link_to image.title, user_image_path(current_user, image) %>
+<% if current_user.images.any? %>
+  <h3><%= current_user.username%>'s Uploaded Images<h3>
+  <div class="image-list">
+    <% current_user.images.each do |image| %>
+    <div class="image-div">
+      <%= image_tag image.image.url(:medium) %>
+      <%= link_to image.title, user_image_path(current_user, image) %>
+    </div>
+    <% end %>
   </div>
-  <% end %>
-</div>
+<%else%>
+  <h3>You have not uploaded any images</h3>
+<%end%>

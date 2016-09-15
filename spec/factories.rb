@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :user do
+    username('blender')
     email('me@me.com')
     password('123456')
     avatar { File.new("#{Rails.root}/spec/support/fixtures/image.jpg") }
