@@ -1,9 +1,10 @@
 <h1>EpiFlickr</h1>
 
 <h3>Browse Images</h3>
-
-<% @images.each do |image| %>
-  <div class="image-div">
-    <%= image_tag image.image.url(:medium) %>
-  </div>
-<% end %>
+<div class="image-list">
+  <% @images.each do |image| %>
+    <div class="image-div">
+      <%= image_tag image.image.url(:medium), class: "img-responsive" %>
+    </div>
+  <% end %>
+</div>

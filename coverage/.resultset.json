@@ -1,12 +1,19 @@
 {
   "RSpec": {
     "coverage": {
-      "/Users/Guest/Desktop/epiflickr/spec/models/image_spec.rb": [
+      "/Users/Guest/Desktop/epiflickr/spec/features/user_pages_spec.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
         1,
         null,
-        1,
-        2,
-        2,
         null
       ],
       "/Users/Guest/Desktop/epiflickr/spec/rails_helper.rb": [
@@ -72,7 +79,7 @@
         1,
         1,
         1,
-        4,
+        5,
         null,
         null,
         null,
@@ -615,6 +622,14 @@
         1,
         null
       ],
+      "/Users/Guest/Desktop/epiflickr/spec/models/image_spec.rb": [
+        1,
+        null,
+        1,
+        2,
+        2,
+        null
+      ],
       "/Users/Guest/Desktop/epiflickr/app/models/image.rb": [
         1,
         1,
@@ -630,8 +645,42 @@
         2,
         null,
         null
+      ],
+      "/Users/Guest/Desktop/epiflickr/app/controllers/home_controller.rb": [
+        1,
+        1,
+        2,
+        null,
+        null
+      ],
+      "/Users/Guest/Desktop/epiflickr/app/controllers/application_controller.rb": [
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        2,
+        null,
+        null,
+        null
       ]
     },
-    "timestamp": 1473894521
+    "timestamp": 1473957822
   }
 }

@@ -9,18 +9,25 @@
   </head>
 
   <body>
-    <div class=" container header-navbar">
-      <%= link_to "Home ||", root_path%>
-      <%if user_signed_in? %>
-        <%= link_to "My Profile |", user_profile_path(current_user) %>
-        <%= link_to "My Pictures |", user_path(current_user) %>
-        <%= link_to "Upload an Image |", new_user_image_path(current_user) %>
-        <span class="pull-right"><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></span>
-      <%else%>
-        <%= link_to "Sign Up |", new_user_registration_path %>
-        <%= link_to "Sign In |", new_user_session_path%>
-      <%end%>
-    </div>
+    <nav class="navbar navbar-default">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <ul class="nav navbar-nav">
+          <li><%= link_to "Home", root_path %></li>
+          <% if user_signed_in? %>
+            <li><%= link_to "My Profile ", user_profile_path(current_user) %></li>
+            <li><%= link_to "My Pictures ", user_path(current_user) %></li>
+            <li><%= link_to "Upload an Image ", new_user_image_path(current_user) %></li>
+            <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+          <%else%>
+            <li><%= link_to 'Sign up', new_user_registration_path %></li>
+            <li><%= link_to "Sign In", new_user_session_path%></li>
+          <% end %>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
 
     <div class="container">
       <p class="notice"><%= notice %></p>

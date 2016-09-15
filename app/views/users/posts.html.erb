@@ -1,8 +1,10 @@
 
 <h3>User Uploaded Images<h3>
-<% current_user.images.each do |image| %>
+<div class="image-list">
+  <% current_user.images.each do |image| %>
   <div class="image-div">
     <%= image_tag image.image.url(:medium) %>
     <%= link_to image.title, user_image_path(current_user, image) %>
   </div>
-<% end %>
+  <% end %>
+</div>

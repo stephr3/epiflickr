@@ -1,2 +1,15 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
+
+.image-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.image-div {
+  margin: 2px;
+  width: 32%;
+  min-width: 175px;
+  padding: 5px;
+}
