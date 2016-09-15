@@ -3,6 +3,9 @@ Rails.application.routes.draw do
   resources :users do
     resources :images
   end
+  resources :images, only: [] do 
+    resources :comments, only: [:create]
+  end
   root to: "home#index"
   get '/user/profile' => "users#profile"
 end

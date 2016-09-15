@@ -4,3 +4,15 @@
   <%= link_to "Edit Image", edit_user_image_path(current_user, @image) %>
   <%= link_to "Delete", user_image_path(current_user, @image), :data => {:confirm => "You sure?",                             :method => "delete"} %>
 <% end %>
+
+<h3>Add a New Comment</h3>
+<%= render 'comments/form' %>
+
+<h3>All Comments</h3>
+<% if @image.comments.any? %>
+  <% @image.comments.each do |comment| %>
+    <p><%= comment.find_author%></p>
+    <p><%= comment.content %></p>
+    <p><%= comment.created_at%></p>
+  <% end %>
+<%end%>
