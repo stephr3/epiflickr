@@ -1,11 +1,12 @@
 class ImagesController < ApplicationController
   before_filter :is_image_owner, only:[:edit, :destroy]
-  def new
-    @image = Image.new
-  end
   def show
     @image = Image.find(params[:id])
     @comment = Comment.new
+  end
+
+  def new
+    @image = Image.new
   end
 
   def create

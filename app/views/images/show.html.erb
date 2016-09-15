@@ -1,9 +1,16 @@
+<!--display tags  -->
 <%= image_tag @image.image.url(:medium) %>
+
 <%=@image.title %>
 
 <% if current_user.id == @image.user_id %>
   <%= link_to "Edit Image", edit_user_image_path(current_user, @image) %>
   <%= link_to "Delete", user_image_path(current_user, @image), :data => {:confirm => "You sure?",                             :method => "delete"} %>
+  <%= form_tag image_tags_path(@image) do %>
+    <%= label_tag :tags %>
+    <%= text_field_tag :tags %>
+    <%= submit_tag "Add Tags" %>
+  <% end %>
 <% end %>
 
 <h3>Add a New Comment</h3>
@@ -15,5 +22,11 @@
     <p><%= comment.find_author%></p>
     <p><%= comment.content %></p>
     <p><%= comment.created_at%></p>
+  <% end %>
+<%end%>
+
+<% if @image.tags.any? %>
+  <% @image.tags.each do |tag| %>
+    <p><%= tag.name %></p>
   <% end %>
 <%end%>
