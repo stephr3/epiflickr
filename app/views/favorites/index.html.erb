@@ -1,0 +1,6 @@
+<% @favorites.each do |image| %>
+  <div class="image-div">
+    <%= image_tag image.image.url(:medium), class: "img-responsive" %>
+    <%= link_to image.title, user_image_path(image.user_id, image) %>
+  </div>
+<% end %>

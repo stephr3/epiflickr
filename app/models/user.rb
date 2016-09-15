@@ -11,4 +11,6 @@ class User < ApplicationRecord
                                 :thumb => "1--X100#"},
                                 :default_url => "/images/:style/missing.png"
   validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  has_and_belongs_to_many :favorited_images, class_name:"Image"
+
 end

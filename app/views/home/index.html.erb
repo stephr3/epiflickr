@@ -6,6 +6,12 @@
     <div class="image-div">
       <%= image_tag image.image.url(:medium), class: "img-responsive" %>
       <%= link_to image.title, user_image_path(image.user_id, image) %>
+      <% if current_user %>
+        <%= form_tag user_favorites_path(current_user) do %>
+        <%= hidden_field_tag :image_id, image.id %>
+        <%= submit_tag "Favorite!!" %>
+      <% end %>
+      <% end %>
     </div>
   <% end %>
 </div>
