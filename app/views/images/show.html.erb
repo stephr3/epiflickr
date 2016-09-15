@@ -1,4 +1,11 @@
-<!--display tags  -->
+<% if @image.tags.any? %>
+<ul>
+  <% @image.tags.each do |tag| %>
+  <li style="display: inline-block"><%= tag.name %></li>
+  <% end %>
+</ul>
+<%end%>
+
 <%= image_tag @image.image.url(:medium) %>
 
 <%=@image.title %>
@@ -16,17 +23,11 @@
 <h3>Add a New Comment</h3>
 <%= render 'comments/form' %>
 
-<h3>All Comments</h3>
 <% if @image.comments.any? %>
+<h3>All Comments</h3>
   <% @image.comments.each do |comment| %>
     <p><%= comment.find_author%></p>
     <p><%= comment.content %></p>
     <p><%= comment.created_at%></p>
-  <% end %>
-<%end%>
-
-<% if @image.tags.any? %>
-  <% @image.tags.each do |tag| %>
-    <p><%= tag.name %></p>
   <% end %>
 <%end%>
