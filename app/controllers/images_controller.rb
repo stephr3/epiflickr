@@ -1,7 +1,7 @@
 class ImagesController < ApplicationController
   before_filter :is_image_owner, only:[:edit, :destroy]
   def new
-    @image = current_user.images.new
+    @image = Image.new
   end
   def show
     @image = Image.find(params[:id])

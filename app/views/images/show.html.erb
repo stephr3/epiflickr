@@ -1,4 +1,5 @@
 <%= image_tag @image.image.url(:medium) %>
+<%=@image.title %>
 
 <% if current_user.id == @image.user_id %>
   <%= link_to "Edit Image", edit_user_image_path(current_user, @image) %>

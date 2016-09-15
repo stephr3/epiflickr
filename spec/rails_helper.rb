@@ -59,6 +59,9 @@ RSpec.configure do |config|
   config.include FactoryGirl::Syntax::Methods
   config.include Warden::Test::Helpers
   config.include Paperclip::Shoulda::Matchers
+end
+
+RSpec.configure do |config|
   config.after :each do
     Warden.test_reset!
   end
