@@ -1,7 +1,7 @@
 #  EpiFlickr
 ## *By Stephanie Gurung & Katarina Tuttlet*
 
-_A Flickr Clone that has authorization using Devise, image upload using Paperclip, and allows users to upload images, comment on others' images, tag their own images, and add favorite images. _
+A Flickr Clone that has authorization using Devise, image upload using Paperclip, and allows users to upload images, comment on others' images, tag their own images, and add favorite images. 
 
 ## Technologies Used
 
